@@ -16,18 +16,149 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input, select{
+  height: 38px;
+}
+input, textarea, select{
+  border: 2px solid #ccc;
+  border-radius: 0.3rem;
+  padding: 0.25rem 1rem;
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+}
+/* date time picker */
+.react-datepicker__input-container .react-datepicker__calendar-icon {
+  border-left: 2px solid #ccc;
+  right: 0;
+  height: 21px;
+  position: absolute;
+  padding: 0.5rem;
+  box-sizing: content-box;
+}
+.react-datepicker__view-calendar-icon input {
+  padding: 6px 10px 5px 16px !important;
+}
+/* check box and check radio */
+label,
+input[type="radio"] + span,
+input[type="radio"] + span::before,
+label,
+input[type="checkbox"] + span,
+input[type="checkbox"] + span::before
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+ 
+label *,
+label *
+{
+    cursor: pointer;
+}
+ 
+input[type="radio"],
+input[type="checkbox"]
+{
+    opacity: 0;
+    position: absolute;
+}
+ 
+
+ 
+label:hover span::before,
+label:hover span::before
+{
+    -moz-box-shadow: 0 0 2px #ccc;
+    -webkit-box-shadow: 0 0 2px #ccc;
+    box-shadow: 0 0 2px #ccc;
+}
+ 
+
+ 
+input[type="radio"] + span::before,
+input[type="checkbox"] + span::before
+{
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin: 0 10px 0 0;
+    border: solid 2px #a8a8a8;
+    line-height: 14px;
+    text-align: center;
+     
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+ 
+input[type="radio"]:checked + span::before,
+input[type="checkbox"]:checked + span::before
+{
+    color: #666;
+}
+ 
+input[type="radio"]:disabled + span,
+input[type="checkbox"]:disabled + span
+{
+    cursor: default;
+     
+    -moz-opacity: .4;
+    -webkit-opacity: .4;
+    opacity: .4;
+}
+ 
+input[type="checkbox"] + span::before
+{
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+ 
+input[type="radio"]:checked + span::before
+{
+    content: "\2022";
+    font-size: 16px;
+    margin-top: -1px;
+}
+ 
+input[type="checkbox"]:checked + span::before
+{
+    content: "\2714";
+    font-size: 16px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+
+input[class="blue"] + span::before
+{
+    border: solid 1px blue;
+    background: #B2DBFF;
+    background: -moz-radial-gradient(#B2DBFF, #dfdfdf);
+    background: -webkit-radial-gradient(#B2DBFF, #dfdfdf);
+    background: -ms-radial-gradient(#B2DBFF, #dfdfdf);
+    background: -o-radial-gradient(#B2DBFF, #dfdfdf);
+    background: radial-gradient(#B2DBFF, #dfdfdf);
+}
+input[class="blue"]:checked + span::before
+{
+    color: darkblue;
+}
+
+
+
+input[class="red"] + span::before
+{
+    border: solid 1px red;
+    background: #FF9593;
+    background: -moz-radial-gradient(#FF9593, #dfdfdf);
+    background: -webkit-radial-gradient(#FF9593, #dfdfdf);
+    background: -ms-radial-gradient(#FF9593, #dfdfdf);
+    background: -o-radial-gradient(#FF9593, #dfdfdf);
+    background: radial-gradient(#FF9593, #dfdfdf);
+}
+input[class="red"]:checked + span::before
+{
+    color: darkred;
 }
