@@ -13,8 +13,12 @@ const TodoItemComponent: React.FC<ToDoItem> = ({item,selectedItem,valueChecked,c
   const vegetableSelectId = useId();
   // remove to do item
   const removeTodoHandler = ()=>{
-    dispatch(removeTodo({id: item.id}))
-    CONSTANTS.showToastFunc('Delete to do item successfully', 'success')
+      let text = "do you want to delete it?";
+      if (confirm(text) == true) {
+        dispatch(removeTodo({id: item.id}))
+        CONSTANTS.showToastFunc('Delete to do item successfully', 'success')
+      }
+    
   }
   // Show/Hide form task
   const setTogleFormTask = ()=>{
